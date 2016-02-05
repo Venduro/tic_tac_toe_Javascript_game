@@ -1,0 +1,40 @@
+h2{
+  text-align: center;
+}
+
+body {
+  background-color: black;
+}
+
+.tableStyle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tableDataStyle {
+  border: 5px solid grey;
+  color: white;
+  height: 200px;
+  width: 200px;
+}
+
+.gridImg {
+  height: auto;
+  width: 100%;
+
+}
+
+.row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+img {
+  height: 200px;
+  width: 200px;
+}

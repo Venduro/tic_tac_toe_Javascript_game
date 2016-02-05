@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="tictacktoecss.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="tictacktoejs.js"></script>
+  <title></title>
+</head>
+<body>
+  <!--Jumbotron header-->
+  <div class="jumbotron">
+    <h1>Tic Tac Toe</h1>
+    <!--this button initiates coin toss to determine which player goes first-->
+    <button id = "coinTossButton">Toss the coin!</button>
+  </div>
+  <h2 id="status">
+    Status:
+  </h2>
+  <!--This container hold the tictacktoe tables-->
+  <div class="container-fluid">
+    <div class="row">
+      <!--parent div for the tictacktoe table-->
+      <div class="col-sm-12">
+        <!--TicTackToe table-->
+        <table class="tableStyle">
+          <tr>
+            <!--column1 row1 square1-->
+            <td class="tableDataStyle" id="field0">
+            </td>
+            <!--column2 row1 square2-->
+            <td class="tableDataStyle" id="field1">
+            </td>
+            <!--column3 row1 square3-->
+            <td class="tableDataStyle" id="field2">
+
+            </td>
+          </tr>
+          <tr>
+            <!--column1 row2 square4-->
+            <td class="tableDataStyle" id="field3">
+            </td>
+            <!--column2 row2 square5-->
+            <td class="tableDataStyle" id="field4">
+            </td>
+            <!--column3 row2 square6-->
+            <td class="tableDataStyle" id="field5">
+            </td>
+          </tr>
+          <tr>
+            <!--column1 row3 square7-->
+            <td class="tableDataStyle" id="field6">
+            </td>
+            <!--column2 row3 square8-->
+            <td class="tableDataStyle" id="field7">
+            </td>
+            <!--column3 row3 square9-->
+            <td class="tableDataStyle" id="field8">
+            </td>
+          </tr>
+        </table>
+      </div>
+      <!-- <div class="col-sm-2">
+    </div> -->
+  </div>
+</div>
+</body>
+</html>
+
+<!--O image-->
+  <!--img src='http://www.dreamincode.net/forums/uploads/post-97990-1260678636.png'/>-->
+
+<!--X image-->
+  <!-- <img src='http://wiki.urbandead.com/images/b/bc/Xmark.png'/> -->
