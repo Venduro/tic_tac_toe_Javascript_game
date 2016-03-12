@@ -8,33 +8,38 @@ $(document).ready(function(){
   //This variable represents an array that represents the board, the zeros represent empty spaces.
   var boardArray = [0,0,0,0,0,0,0,0,0];
 
-//this function
-  $("#submit").click(function() {
-    //the variable
-    var first = $("#input1").val().toUpperCase();
-    //the variable
-    var second = $("#input2").val().toUpperCase();
-    $("#versus").html(first + " vs " + second);
-    $("#input1").hide();
-    $("#input2").hide();
-    $("#submit").hide();
-  });
+  //this function
+  $("#submit").click(
+    function() {
+      //the variable
+      var first = $("#player1Input").val().toUpperCase();
+      //the variable
+      var second = $("#player2Input").val().toUpperCase();
+      $("#versus").html(first + " vs " + second);
+      $("#player1Input").hide();
+      $("#player2Input").hide();
+      $("label").hide();
+      $("#submit").hide();
+    }
+  );
 
   //This function initiate a coin toss to determine which player goes first
-  $("#coinTossButton").click(function iniciateCoinToss(){
-    //use math.floor to randomly pick a number between 1 and 2 (player 1 and player 2)
-    var coinSide = Math.floor((Math.random() * 2) + 1);
-    //if cointoss = 1 print heads!
-    if (coinSide === 1) {
-      $("#coinStatus").html("Heads! " + $("#input1").val() + " Goes First!");
-      $("#coinTossButton").hide();
+  $("#coinTossButton").click(
+    function iniciateCoinToss(){
+      //use math.floor to randomly pick a number between 1 and 2 (player 1 and player 2)
+      var coinSide = Math.floor((Math.random() * 2) + 1);
+      //if cointoss = 1 print heads!
+      if (coinSide === 1) {
+        $("#coinStatus").html("Heads! " + $("#player1Input").val() + " Goes First!");
+        $("#coinTossButton").hide();
+      }
+      //if cointoss = 2 print tails
+      if (coinSide === 2) {
+        $("#coinStatus").html("Tails! " + $("#player2Input").val() + " Goes First!");
+        $("#coinTossButton").hide();
+      }
     }
-    //if cointoss = 2 print tails
-    if (coinSide === 2) {
-      $("#coinStatus").html("Tails! " + $("#input2").val() + " Goes First!");
-      $("#coinTossButton").hide();
-    }
-  });
+  );
 
 
   //   The following functions runs when a user clicks on a square and changes the square to 'X'.
@@ -109,40 +114,37 @@ $(document).ready(function(){
       boardArray[parseInt(fieldIndexNumber)] = player2;
 
     }
-    // if (numberClicks === 9) {
-    //   $("p").slideDown( "slow" );
-    //   $("p").html("Cats Game!! </br> Play Again?");
-    //   // $("p").click(function(){
-    // }
-  };
-
+  }
 
   function sum(arr, x, y, z) {
     return arr[x] + arr[y] + arr[z];
-
   };
-//this function resets the game by reloading the page. the function is called with in each if statement as X or O win or when the game is a Draw.
+  //this function resets the game by reloading the page. the function is called with in each if statement as X or O win or when the game is a Draw.
   function resetGame() {
     window.location.reload();
   }
 
-function slideWonResetX(){
-  $( "p" ).slideDown( "slow" );
-  $("p").html("X WON!!! </br> Play Again?");
-  $("p").click(function(){
-    resetGame();
-  });
-}
+  function slideWonResetX(){
+    $( "p" ).slideDown( "slow" );
+    $("p").html("X WON!!! </br> Play Again?");
+    $("p").click(function(){
+      resetGame();
+    });
+  }
 
-//
+  function slideDownOWonReset(){
+    $("p").slideDown( "slow" );
+    $("p").html("O WON!!! </br> Play Again?");
+    $("p").click(function(){
+      resetGame();
+    });
+  }
+
+  //
+
   function findSum(boardArray) {
     if (sum(boardArray, 0, 1, 2) === -3) {
       slideWonResetX();
-      // $( "p" ).slideDown( "slow" );
-      // $("p").html("X WON!!! </br> Play Again?");
-      // $("p").click(function(){
-      //   resetGame();
-      // });
     }
     if (sum(boardArray, 3, 4, 5) === -3) {
       slideWonResetX();
@@ -166,66 +168,38 @@ function slideWonResetX(){
       slideWonResetX();
     }
     if (sum(boardArray, 0, 1, 2) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
     if (sum(boardArray, 3, 4, 5) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
     if (sum(boardArray, 6, 7, 8) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
     if (sum(boardArray, 0, 3, 6) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
     if (sum(boardArray, 1, 4, 7) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
     if (sum(boardArray, 2, 5, 8) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
     if (sum(boardArray, 0, 4, 8) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
     if (sum(boardArray, 2, 4, 6) === 3) {
-      $( "p" ).slideDown( "slow" );
-      $("p").html("O WON!!! </br> Play Again?");
-      $("p").click(function(){
-        resetGame();
-      });
+      slideDownOWonReset();
     }
+    //This function is for the cats game
     if (numberClicks === 9) {
-      $("p").slideDown( "slow" );
+      $("p").slideDown("slow");
       $("p").html("Cats Game!! </br> Play Again?");
-      // $("p").click(function(){
-      //   resetGame();
+      $("p").click(
+        function(){
+          resetGame();
+        }
+      )
     }
-  };
+  }
 });

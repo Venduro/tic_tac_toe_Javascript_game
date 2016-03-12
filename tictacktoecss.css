@@ -19,16 +19,16 @@ h2{
   font-size: 15pt;
 }
 
-#input1 {
+/*#player1Input {
 
   float: left;
   margin-left: 80px;
-}
+}*/
 
-#input2 {
+/*#player2Input {
   float: right;
   margin-right: 80px;
-}
+}*/
 
 .tableStyle {
   margin-left: auto;
