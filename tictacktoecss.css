@@ -1,10 +1,34 @@
+  body {
+  background-color: black;
+  font-family: 'Permanent Marker', cursive;
+}
+
 h2{
   text-align: center;
 }
 
-body {
-  background-color: black;
+.jumbotron {
+  text-align: center;
 }
+
+#bigTitle {
+  font-size: 10vw;
+}
+
+#coinStatus {
+  font-size: 15pt;
+}
+
+/*#player1Input {
+
+  float: left;
+  margin-left: 80px;
+}*/
+
+/*#player2Input {
+  float: right;
+  margin-right: 80px;
+}*/
 
 .tableStyle {
   margin-left: auto;
@@ -17,24 +41,29 @@ body {
   height: 200px;
   width: 200px;
 }
-
-.gridImg {
-  height: auto;
-  width: 100%;
-
-}
-
 .row {
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
-.jumbotron {
-  text-align: center;
-}
-
 img {
   height: 200px;
   width: 200px;
 }
+
+p {
+    display: none;
+    position: absolute;
+    padding-top: 400px;
+    width: 100vw;
+    height: 100vw;
+    font-size: 120pt;
+    text-align: center;
+    color: red;
+    background: black;
+    padding-top: 25px;
+    top: 0;
+    left: 0;
+    display: none;
+  }

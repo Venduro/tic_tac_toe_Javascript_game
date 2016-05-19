@@ -4,25 +4,37 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="tictacktoecss.css">
+  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
   <script src="tictacktoejs.js"></script>
   <title></title>
 </head>
 <body>
+  <div id="player1Div"></div>
   <!--Jumbotron header-->
   <div class="jumbotron">
-    <h1>Tic Tac Toe</h1>
+    <h1 id="bigTitle">Tic Tac Toe</h1>
+    <h2 id="versus"></h2>
     <!--this button initiates coin toss to determine which player goes first-->
+    <label for="player1">Player 1 </label>
+    <input type="text" name="player1" placeholder="Enter Name Here..." id="player1Input">
+    <input type="button" id="submit" value="Sumbit"/>
+    <input type="text" name="player2" placeholder="Enter Name Here..." id="player2Input">
+    <label for="player2">Player 2 </label>
+    </br>
+    <h2 id="coinStatus">Flip The Coin...If you Dare...</h2>
     <button id = "coinTossButton">Toss the coin!</button>
   </div>
-  <h2 id="status">
-    Status:
-  </h2>
+
   <!--This container hold the tictacktoe tables-->
   <div class="container-fluid">
     <div class="row">
       <!--parent div for the tictacktoe table-->
       <div class="col-sm-12">
+        <div>
+          <p>
+          </p>
+        </div>
         <!--TicTackToe table-->
         <table class="tableStyle">
           <tr>
